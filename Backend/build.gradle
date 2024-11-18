@@ -1,0 +1,48 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.test_rhiscom.market'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring Boot Starter Web
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Spring Boot Starter Data MongoDB
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+	// Spring Boot Starter Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// JWT for Spring Security
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+	// Lombok for reducing boilerplate code
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// Spring Boot Starter Test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	// Mockito for mocking in tests
+	testImplementation 'org.mockito:mockito-core:3.11.2'
+	testImplementation 'org.mockito:mockito-junit-jupiter:3.11.2'
+
+	// Dependencia de JAXB
+	implementation 'javax.xml.bind:jaxb-api:2.3.1'
+	implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
+}
+
+test {
+	useJUnitPlatform()
+}
